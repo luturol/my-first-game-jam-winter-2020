@@ -21,6 +21,19 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Vertical", movement.y);
 
         animator.SetFloat("Speed", movement.sqrMagnitude);
+
+        if(movement.x <  0 && transform.localScale.x > 0)
+        {            
+            Debug.Log("Runing left " + movement.x);
+            transform.localScale = new Vector3(- 1 , transform.localScale.y, transform.localScale.z);
+        }
+        else if( movement.x > 0)
+        {
+            Debug.Log("Runing right " + movement.x);
+            transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
+        }
+       
+       
     }
 
     // work same as Update but it control physics

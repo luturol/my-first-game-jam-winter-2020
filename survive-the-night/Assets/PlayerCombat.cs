@@ -18,6 +18,11 @@ public class PlayerCombat : MonoBehaviour
         {
             Attack();
         }
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+
+        }
+        
         
     }
 
@@ -37,7 +42,18 @@ public class PlayerCombat : MonoBehaviour
         }
     }
 
-    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("colidded ");
+        if(collision.name != this.name)
+        {
+            Debug.Log("Hited object " + collision.name);
+            Debug.Log("player position " + transform.position.ToString());
+            
+            Debug.Log("" + collision.gameObject.name);
+        }
+    }
+
     private void OnDrawGizmosSelected()
     {
         if (attackPoint == null)
