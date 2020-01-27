@@ -37,11 +37,12 @@ public class PlayerCombat : MonoBehaviour
         }
     }
 
+    
     private void OnDrawGizmosSelected()
     {
         if (attackPoint == null)
             return;
         
-        Gizmos.DrawSphere(attackPoint.position, attackRange);
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 }
