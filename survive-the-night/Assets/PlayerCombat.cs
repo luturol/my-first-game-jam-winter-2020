@@ -20,7 +20,7 @@ public class PlayerCombat : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-
+            
         }
         
         
