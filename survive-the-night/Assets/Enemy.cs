@@ -19,12 +19,14 @@ public class Enemy : MonoBehaviour
         currentHealth -= damage;
 
         //Play hurt animation
-        Instantiate(bloodEffect, gameObject.transform.position, gameObject.transform.rotation);
+        var bloodClone = Instantiate(bloodEffect, gameObject.transform.position, gameObject.transform.rotation);
 
+        Destroy(bloodClone, bloodClone.GetComponent<ParticleSystem>().main.duration);
         if(currentHealth <= 0)
         {
             Die();
         }
+
     }
 
     void Die()
