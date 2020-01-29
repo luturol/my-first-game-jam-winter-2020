@@ -5,7 +5,9 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public int maxHealth = 100;
+    public GameObject bloodEffect;
     int currentHealth;
+    
 
     void Start()
     {
@@ -17,6 +19,7 @@ public class Enemy : MonoBehaviour
         currentHealth -= damage;
 
         //Play hurt animation
+        Instantiate(bloodEffect, gameObject.transform.position, gameObject.transform.rotation);
 
         if(currentHealth <= 0)
         {
@@ -31,5 +34,6 @@ public class Enemy : MonoBehaviour
         //Play death animation
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
+        Destroy(gameObject);
     }
 }

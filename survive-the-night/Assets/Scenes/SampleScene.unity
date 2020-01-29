@@ -4848,6 +4848,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  bloodEffect: {fileID: 5394675606446579919, guid: 8f1731b8f24ad094fb236ab57b888c21,
+    type: 3}
 --- !u!1 &1905112930
 GameObject:
   m_ObjectHideFlags: 0
@@ -5418,7 +5420,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.024540305, y: -0.17791748}
