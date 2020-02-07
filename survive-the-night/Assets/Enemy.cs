@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     public int maxHealth = 100;
     public GameObject bloodEffect;
     int currentHealth;
-    
+    public Animator animator;
 
     void Start()
     {
@@ -36,6 +36,9 @@ public class Enemy : MonoBehaviour
         //Play death animation
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
-        Destroy(gameObject);
+
+        animator.SetTrigger("Die");
+
+        Destroy(gameObject, 0.5f);
     }
 }
