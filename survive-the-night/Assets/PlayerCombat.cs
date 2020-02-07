@@ -17,13 +17,7 @@ public class PlayerCombat : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Attack();
-        }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            
-        }
-        
-        
+        }        
     }
 
     void Attack()
@@ -35,11 +29,25 @@ public class PlayerCombat : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
         //Damage them
-        foreach(Collider2D enemy in hitEnemies)
+        foreach(Collider2D enemyCollided in hitEnemies)
         {
-            Debug.Log("We hit " + enemy.name);
-            enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+            Debug.Log("We hit " + enemyCollided.name);
+            var enemy = enemyCollided.GetComponent<Enemy>();
+            enemy.TakeDamage(attackDamage, new Vector2(transform.position.x, transform.position.y));
+            pushEnemyAway(enemy);
         }
+    }
+
+    private void pushEnemyAway(Enemy enemy)
+    {        
+
+        var magnitude = 2500;
+        var force = transform.position - enemy.transform.position;
+        force.Normalize();
+
+        Debug.Log("Force " + force);
+
+        enemy.GetComponent<Rigidbody2D>().AddForce(force * magnitude, ForceMode2D.Impulse);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

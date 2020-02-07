@@ -14,20 +14,20 @@ public class Enemy : MonoBehaviour
         this.currentHealth = maxHealth;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, Vector2 position)
     {
         currentHealth -= damage;
 
         //Play hurt animation
         var bloodClone = Instantiate(bloodEffect, gameObject.transform.position, gameObject.transform.rotation);
-
-        Destroy(bloodClone, bloodClone.GetComponent<ParticleSystem>().main.duration);
-        if(currentHealth <= 0)
+        Destroy(bloodClone, bloodClone.GetComponent<ParticleSystem>().main.duration);                        
+        
+        if (currentHealth <= 0)
         {
             Die();
-        }
-
+        }        
     }
+
 
     void Die()
     {
