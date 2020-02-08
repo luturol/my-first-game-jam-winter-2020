@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+        healthBar.value = currentHealth;
         healthBar.maxValue = maxHealth;
     }
     
