@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -8,16 +9,23 @@ public class Enemy : MonoBehaviour
     public GameObject bloodEffect;
     int currentHealth;
     public Animator animator;
+    public Slider healthBar;
 
     void Start()
     {
-        this.currentHealth = maxHealth;
+        currentHealth = maxHealth;
+        healthBar.value = currentHealth;
+        healthBar.maxValue = maxHealth;
     }
-
+    
     public void TakeDamage(int damage, Vector2 position)
     {
+        Debug.Log("HealthBar = " + healthBar.value + " Current Health = " + currentHealth);
+        Debug.Log("Damage = " + damage);
         currentHealth -= damage;
+        healthBar.value = currentHealth;
 
+        Debug.Log("HealtBar = " + healthBar.value + " Current Health = " + currentHealth);
         //Play hurt animation
         var bloodClone = Instantiate(bloodEffect, gameObject.transform.position, gameObject.transform.rotation);
         Destroy(bloodClone, bloodClone.GetComponent<ParticleSystem>().main.duration);                        

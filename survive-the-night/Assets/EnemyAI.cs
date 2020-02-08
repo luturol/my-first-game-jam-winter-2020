@@ -12,11 +12,9 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
         animator.SetFloat("Speed", 1);
-        Debug.Log("X " + aiPath.desiredVelocity.x + " Y " + aiPath.desiredVelocity.y);
         
         if (aiPath.desiredVelocity.x >= 0.01f && (aiPath.desiredVelocity.x > aiPath.desiredVelocity.y)) //moving right
         {
-                    
             animator.SetFloat("Horizontal", 1f);
             animator.SetFloat("Vertical", 0f);
             transform.localScale = new Vector3(1f, 1f, 1f);
@@ -37,6 +35,5 @@ public class EnemyAI : MonoBehaviour
             animator.SetFloat("Horizontal", 0f);
             animator.SetFloat("Vertical", -1f);
         }
-        
     }
 }

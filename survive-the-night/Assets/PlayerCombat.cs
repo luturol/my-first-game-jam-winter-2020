@@ -34,13 +34,12 @@ public class PlayerCombat : MonoBehaviour
             Debug.Log("We hit " + enemyCollided.name);
             var enemy = enemyCollided.GetComponent<Enemy>();
             enemy.TakeDamage(attackDamage, new Vector2(transform.position.x, transform.position.y));
-            pushEnemyAway(enemy);
+            //pushEnemyAway(enemy);
         }
     }
 
     private void pushEnemyAway(Enemy enemy)
     {        
-
         var magnitude = 2500;
         var force = transform.position - enemy.transform.position;
         force.Normalize();
