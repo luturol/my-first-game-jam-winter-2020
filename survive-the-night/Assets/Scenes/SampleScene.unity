@@ -9755,7 +9755,7 @@ MonoBehaviour:
   manualDebugFloorRoof: 0
   showSearchTree: 0
   unwalkableNodeDebugSize: 0.3
-  logPathResults: 1
+  logPathResults: 0
   maxNearestNodeDistance: 100
   scanOnStartup: 1
   fullGetNearestSearch: 0
@@ -10104,8 +10104,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 667741c437600af429cf1b4eda35c35b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemies: {fileID: 2840296449895676430, guid: cd7d4617c5b2e474bb52c386a5ffa5db, type: 3}
-  Target: {fileID: 1965473541}
+  Enemies: {fileID: 2840296449895676428, guid: cd7d4617c5b2e474bb52c386a5ffa5db, type: 3}
+  Target: {fileID: 1965473539}
+  HealthBar: {fileID: 3296798979876387976, guid: 28d9b8bdaaf3d294c8bef166180a06b0,
+    type: 3}
 --- !u!4 &2111667969
 Transform:
   m_ObjectHideFlags: 0

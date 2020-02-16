@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FollowTransform : MonoBehaviour
 {
-    public Transform m_objectToFollow;
+    private Transform m_objectToFollow;
     private RectTransform m_rect;
 
     void Start()
@@ -15,5 +15,10 @@ public class FollowTransform : MonoBehaviour
     void Update()
     {
         this.m_rect.anchoredPosition = CanvasManager.Instance.WorldToCanvasPoint(m_objectToFollow.position);
+    }
+
+    public void SetFollowingObject(Transform toFollow)
+    {
+        this.m_objectToFollow = toFollow;
     }
 }

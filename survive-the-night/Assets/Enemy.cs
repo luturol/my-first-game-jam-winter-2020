@@ -9,27 +9,28 @@ public class Enemy : MonoBehaviour
     public GameObject bloodEffect;
     int currentHealth;
     public Animator animator;
-    public Slider healthBar;
+    private Slider sliderHealth;
 
     void Start()
     {
-        currentHealth = maxHealth;
-        healthBar.value = currentHealth;
-        healthBar.maxValue = maxHealth;
+        currentHealth = maxHealth;            
     }
     
+    public void SetHealthBar(Slider healthBar)
+    {
+        sliderHealth = healthBar;                
+        sliderHealth.value = currentHealth;
+        sliderHealth.maxValue = maxHealth;
+    }
+
     public void TakeDamage(int damage, Vector2 position)
     {
-        Debug.Log("HealthBar = " + healthBar.value + " Current Health = " + currentHealth);
-        Debug.Log("Damage = " + damage);
         currentHealth -= damage;
-        healthBar.value = currentHealth;
-
-        Debug.Log("HealtBar = " + healthBar.value + " Current Health = " + currentHealth);
+        sliderHealth.value = currentHealth;
+        
         //Play hurt animation
         var bloodClone = Instantiate(bloodEffect, gameObject.transform.position, gameObject.transform.rotation);
-        Destroy(bloodClone, bloodClone.GetComponent<ParticleSystem>().main.duration);                        
-        
+        Destroy(bloodClone, bloodClone.GetComponent<ParticleSystem>().main.duration);        
         if (currentHealth <= 0)
         {
             Die();
@@ -39,14 +40,12 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("Enemy Died!");
-
         //Play death animation
         GetComponent<Collider2D>().enabled = false;
-        this.enabled = false;
+        this.enabled = false;        
 
         animator.SetTrigger("Die");
-
+        
         Destroy(gameObject, 0.5f);
     }
 }
