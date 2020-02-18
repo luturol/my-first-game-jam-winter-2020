@@ -9,59 +9,81 @@ public class SpawnEnemy : MonoBehaviour
     public GameObject Enemies;
     public GameObject Target;
     public GameObject HealthBar;
-    private float lastSpawn = 5;
+
+    //Wave settings
+    private float lastSpawn = 2f;
+    private float waitNextWave = 5f;
     private float waited = 0f;
     private int spawnPerWave = 1;
     private int spawned = 0;
-    private List<int> fibonacci = new List<int>
-    {
-        1, 1
-    };
-    
-    void Start()
-    {
+    private List<int> fibonacciWave;
+    public Text waveCountText;
+    private bool waveEnded = false;
 
+    private void Start()
+    {
+        fibonacciWave = new List<int> { spawnPerWave };        
     }
-
 
     // Update is called once per frame
     void Update()
-    {
-        CreateNewWave();
+    {        
         Spawn();
+        waveCountText.text = "Wave: " + (fibonacciWave.Count - 1);
     }
 
     private void Spawn()
     {
         waited += Time.deltaTime;
 
-        if (lastSpawn < waited && spawned < spawnPerWave)
+        if(waveEnded == true && waited > waitNextWave)
         {
-            waited = 0;
-            spawned += 1;
-
-            var health = Instantiate(HealthBar) as GameObject;
-            var enemy = Instantiate(Enemies) as GameObject;
-
-            enemy.GetComponent<EnemyAI>().target = Target.transform;                      
-
-            var sliderRef = health.GetComponentInChildren<Slider>();
-            sliderRef.GetComponent<FollowTransform>().SetFollowingObject(enemy.transform);
-
-            enemy.GetComponent<Enemy>().SetHealthBar(sliderRef);
-
-            
-            health.transform.SetParent(enemy.transform);            
+            InstantiateEnemy();
+            waveEnded = false;
         }
+        else if (lastSpawn < waited && spawned < spawnPerWave  && waveEnded == false)
+        {
+            InstantiateEnemy();
+        }
+        else if(spawned == spawnPerWave)
+        {
+            waveEnded = true;
+            CreateNewWave();
+        }
+    }
+
+    private void InstantiateEnemy()
+    {
+        waited = 0;
+        spawned += 1;
+
+        var health = Instantiate(HealthBar) as GameObject;
+        var enemy = Instantiate(Enemies) as GameObject;
+
+        enemy.GetComponent<EnemyAI>().target = Target.transform;
+
+        var sliderRef = health.GetComponentInChildren<Slider>();
+        sliderRef.GetComponent<FollowTransform>().SetFollowingObject(enemy.transform);
+
+        enemy.GetComponent<Enemy>().SetHealthBar(sliderRef);
+
+
+        health.transform.SetParent(enemy.transform);
     }
 
     private void CreateNewWave()
     {
-        if (spawned == spawnPerWave && fibonacci.Count < 4)
+        if (spawned == spawnPerWave && fibonacciWave.Count == 1)
         {
             spawned = 0;
-            spawnPerWave = fibonacci[fibonacci.Count - 1] + fibonacci[fibonacci.Count - 2];
-            fibonacci.Add(spawnPerWave);
+            spawnPerWave = fibonacciWave[fibonacciWave.Count - 1] + fibonacciWave[fibonacciWave.Count - 1];
+            fibonacciWave.Add(spawnPerWave);
+        }
+        else if (spawned == spawnPerWave && fibonacciWave.Count < 4 && fibonacciWave.Count > 1)
+        {
+            spawned = 0;
+            spawnPerWave = fibonacciWave[fibonacciWave.Count - 1] + fibonacciWave[fibonacciWave.Count - 2];
+            fibonacciWave.Add(spawnPerWave);
         }
     }
 }
