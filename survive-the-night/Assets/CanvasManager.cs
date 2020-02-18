@@ -5,27 +5,11 @@ using UnityEngine;
 public class CanvasManager : MonoBehaviour
 {
     private Rect m_canvasRect;
-    // Start is called before the first frame update
-    private static CanvasManager canvasManager;
-    public static CanvasManager Instance
-    {
-        get
-        {
-            return canvasManager;
-        }
-    }
+    public static CanvasManager Instance { get; private set; }
 
     void Start()
     {
-        if(canvasManager != null && canvasManager != this)
-        {
-            Destroy(this.gameObject);
-        }
-        else
-        {
-            canvasManager = this;
-        }
-
+        Instance = this;        
         m_canvasRect = GetComponentInParent<Canvas>().GetComponent<RectTransform>().rect;
     }
 

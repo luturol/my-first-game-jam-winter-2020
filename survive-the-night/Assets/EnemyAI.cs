@@ -7,12 +7,24 @@ public class EnemyAI : MonoBehaviour
 {
     public AIPath aiPath;
     public Animator animator;
+    public Component target;
+
+    private void Start()
+    {        
+    }
 
     // Update is called once per frame
     void Update()
     {
         animator.SetFloat("Speed", 1);
-        
+
+        var aiPath = gameObject.GetComponent<AIPath>();
+        if (aiPath)
+        {
+            aiPath.destination = target.transform.position;
+        }
+            
+
         if (aiPath.desiredVelocity.x >= 0.01f && (aiPath.desiredVelocity.x > aiPath.desiredVelocity.y)) //moving right
         {
             animator.SetFloat("Horizontal", 1f);

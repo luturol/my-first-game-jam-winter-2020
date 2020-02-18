@@ -37,13 +37,11 @@ public class PlayerMovement : MonoBehaviour
 
         
         if(movement.x <  0 && transform.localScale.x > 0)
-        {            
-            Debug.Log("Runing left " + movement.x);
+        {                        
             transform.localScale = new Vector3(- 1 , transform.localScale.y, transform.localScale.z);
         }
         else if(movement.x > 0)
-        {
-            Debug.Log("Runing right " + movement.x);
+        {            
             transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
         }
        
