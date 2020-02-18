@@ -17,9 +17,7 @@ public class SpawnEnemy : MonoBehaviour
     {
         1, 1
     };
-
-    private List<GameObject> enemiesSpawned = new List<GameObject>();
-
+    
     void Start()
     {
 
@@ -45,15 +43,7 @@ public class SpawnEnemy : MonoBehaviour
             var health = Instantiate(HealthBar) as GameObject;
             var enemy = Instantiate(Enemies) as GameObject;
 
-            enemy.GetComponent<EnemyAI>().target = Target.transform;
-            
-            if(enemiesSpawned.Count > 0)
-            {
-                foreach (Component component in health.GetComponentsInChildren<Component>())
-                {
-                    Debug.Log("Components from HealthBar = " + component);
-                }                
-            }
+            enemy.GetComponent<EnemyAI>().target = Target.transform;                      
 
             var sliderRef = health.GetComponentInChildren<Slider>();
             sliderRef.GetComponent<FollowTransform>().SetFollowingObject(enemy.transform);
@@ -61,9 +51,7 @@ public class SpawnEnemy : MonoBehaviour
             enemy.GetComponent<Enemy>().SetHealthBar(sliderRef);
 
             
-            health.transform.SetParent(enemy.transform);
-
-            enemiesSpawned.Add(enemy);
+            health.transform.SetParent(enemy.transform);            
         }
     }
 
