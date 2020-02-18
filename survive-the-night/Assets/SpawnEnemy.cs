@@ -27,9 +27,9 @@ public class SpawnEnemy : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {        
-        Spawn();
-        waveCountText.text = "Wave: " + (fibonacciWave.Count - 1);
+    {
+        waveCountText.text = "Wave: " + fibonacciWave.Count;
+        Spawn();        
     }
 
     private void Spawn()
