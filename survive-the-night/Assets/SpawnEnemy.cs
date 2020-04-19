@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SpawnEnemy : MonoBehaviour
 {
@@ -67,7 +68,6 @@ public class SpawnEnemy : MonoBehaviour
 
         enemy.GetComponent<Enemy>().SetHealthBar(sliderRef);
 
-
         health.transform.SetParent(enemy.transform);
     }
 
@@ -84,6 +84,11 @@ public class SpawnEnemy : MonoBehaviour
             spawned = 0;
             spawnPerWave = fibonacciWave[fibonacciWave.Count - 1] + fibonacciWave[fibonacciWave.Count - 2];
             fibonacciWave.Add(spawnPerWave);
+        }
+
+        if(fibonacciWave.Count == 4 && waveEnded)
+        {
+            SceneManager.LoadScene("menu");
         }
     }
 }
