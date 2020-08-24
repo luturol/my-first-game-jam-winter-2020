@@ -5,11 +5,11 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class SpawnEnemy : MonoBehaviour
-{
-    // Start is called before the first frame update
+{    
     public GameObject Enemies;
     public GameObject Target;
     public GameObject HealthBar;
+    public Text waveCountText;
 
     //Wave settings
     private float lastSpawn = 2f;
@@ -17,8 +17,7 @@ public class SpawnEnemy : MonoBehaviour
     private float waited = 0f;
     private int spawnPerWave = 1;
     private int spawned = 0;
-    private List<int> fibonacciWave;
-    public Text waveCountText;
+    private List<int> fibonacciWave;    
     private bool waveEnded = false;
 
     private void Start()
@@ -26,10 +25,10 @@ public class SpawnEnemy : MonoBehaviour
         fibonacciWave = new List<int> { spawnPerWave };        
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        waveCountText.text = "Wave: " + fibonacciWave.Count;
+        //waveCountText.text = "Wave: " + fibonacciWave.Count;
         Spawn();        
     }
 
@@ -60,7 +59,8 @@ public class SpawnEnemy : MonoBehaviour
 
         var health = Instantiate(HealthBar) as GameObject;
         var enemy = Instantiate(Enemies) as GameObject;
-
+        enemy.transform.position = this.transform.position;
+        
         enemy.GetComponent<EnemyAI>().target = Target.transform;
 
         var sliderRef = health.GetComponentInChildren<Slider>();

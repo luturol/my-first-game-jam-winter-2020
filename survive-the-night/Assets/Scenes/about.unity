@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 336632677}
   - component: {fileID: 336632676}
   m_Layer: 5
-  m_Name: Text
+  m_Name: AboutText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -205,11 +205,11 @@ MonoBehaviour:
     A special thanks for my brother William
     Ahrons that always encourage me to follow my dreams and to code what I like and
     enjoy; for my mother Ruth that always encourage and helped the way she could;
-    for Douglas Siqueira, my friend that always tried to help me giving ideias and
-    suggestions about the game and my projects; for Gregory Duarte, my collegue that
-    encourages me to code things that make me happy and that always helped me with
-    code, ideas and  motivation issues; A thanks for Sid Makes Games that helped
-    me solve the issue of health bar on Treants.'
+    for Douglas Siqueira, my friend that always help me giving ideias and suggestions
+    about the game and my projects; for Gregory Duarte, my collegue that encourages
+    me to code things that make me happy and that always helped me with code, ideas
+    and  motivation issues; A thanks for Sid Makes Games that helped me solve the
+    issue of health bar on Treants.'
 --- !u!222 &336632677
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -376,7 +376,7 @@ GameObject:
   - component: {fileID: 1562265967}
   - component: {fileID: 1562265966}
   m_Layer: 5
-  m_Name: Button
+  m_Name: BackToMenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
