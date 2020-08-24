@@ -100,7 +100,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0.006337881, y: -0.17286158}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,7 +130,6 @@ MonoBehaviour:
   bloodEffect: {fileID: 5394675606446579919, guid: 8f1731b8f24ad094fb236ab57b888c21,
     type: 3}
   animator: {fileID: 2840296449895676436}
-  healthBar: {fileID: 0}
 --- !u!114 &2840296449895676426
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -476,7 +476,7 @@ GameObject:
   m_Component:
   - component: {fileID: 549601419}
   - component: {fileID: 549601418}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -542,7 +542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAACwn+vEtbNnWwIAAAEFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVMty2jAU/RVG68LYwATSXesQ0gVJJrSTjTeydY01yJJHj/Aa/r1XssGuu0Kccx/nXF35Qrg0NeRW6bXmbKMYkO8j4s/k26gjX+BId0pu+RluMZ+c2dIH0RDzQS1XiMc+zagKrOb5D7kTPjhC0EleKF2t2A4SZaxBuKDCAFJaWZ8tEbqMyBF/xo8+5YSn6cKfznh6jEZXPOYgLehe6HQyjWfL5cPycTWOFm3aLanJcTIXtKqBeQNdarxso+MmTKK1NsLbyJUQ3LS6iD3VwXdCa+PQFQYwTtFnEBNPZgiUwHel9ar76W9FYcC2ojQ9PXGNA2vqkp+qmWJFzb5R9kWFCxKCpqbk5j923NCFVtXLrWsc+Q625Pn+g55yamxvyH34qSc8jOdAxZ5mAj5LkK9qrZWTDEmrnU91BqZP3d+7saSEfN/hjdQB6Opu3tHgcryHa/B+TASvMk9N5g2wFSrMOywCaLyZXyg4rIlpSyDqVfwx8Jvu+vvUEs9cG4tU61J6eZly2oeSVZiZd+NsorSEALeia5BU2NM7lrHDCxxwvbYD5pn6l9M2b7nbgxikBLiLj6IB9a4O98sypTpswJRvzgouoRPtiVecU6KkbParP5Nb2tbpgua9tJ3j7N/VIjBfPGRFPH2IijgrlrPxvJjO5sucZbNFxiibk7B7XKJPKt4boe148NZkV1zint0+KKO1pnXYdabpYc3PleoL5LJQ21wDyLemxF05aOyCz5KtGMcJbcFaLsOFk0tKhMr3wNJ7zzRYXR2tpmlXJSU1/1LWIylJwickJVdy/QtQSwMEFAAACAgAALCf6w3l519sAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTUUVBKL0osyCgGioA5pZkpIHa0UqqJuVlSmqGRmUGaYVKahbGuSZqRsYlFckqSsXlSSmKKiVIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICAAAsJ/rxLWzZ1sCAAABBQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAsJ/rDeXnX2wAAAB4AAAACQAkAAAAAAAAAAAAAACoAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAF8DAAAAAA==
+    dataString: UEsDBBQAAAgIAACwn+t+Xa4KXwIAAAQFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1z2jAQ/SuMziVjGxpIb60hpId8TEgnF19ka401yJJHHwGS4b93JRvsuifE2327761W/iJcmgYKq/RGc/aoGJAfE+LP5NukDz7Ake6U3PJPuOS8c2Yrn0RDziu1XCEee5pRNVjNi59yJ3xyhKCTvFS6XrMdpMpYg3BJhQEMaWU9WyL0NSFH/JneecoJT8nCnz7xdBdNzngsQFrQg9TkJolny+Xt8m49jRYd7UJqOU4WgtYNMG+gp8bLLjtu0yRa6zK8jUIJwU2ni9hTE3yntDEOXWEC4xR9BjHxzQyBCviusl71kP5clgZsJ0rT04prHFhbl/xS7RRravatsg8qXJAQJd+DrLbq438J0ziES63qh0vjOPJNbMWL/Ss9FdTYwZyH8GqgPUzoQMWe5gLeK5BPaqOVkwyDVjtPdQaSVf/36i2toNj3eCt1BLqmH3k0uh/v4RzsH1PB69yHbuYtsBUqjDzsAmi8nN8oOGyK6Uog6lX8MfBGd8OV6gL3XBuLoc6l9PJy5bRPJeswM+/G2VRpCQHuRDcgqbCnFyxjx3c4ig3ajiL31D+ernkXu7yJESXAfX4UjUIv6nC9LFOpwyOY6tlZwSX0on3gCeeUKinbFRvO5ELbOl3SYkDbOc7+XS0C88VtXsbJbVTGebmcTedlMpsvC5bPFjmjbE7C7nGJPql4aYV248Fbk31xiXt2+aZMNpo2Yd2ZpocN/6zVUCCXpdoWGkA+tyWuykFjF3yZbM04TmgL1nIZLpx8ZUSoYg8su/bMgtX10Wqa9VUy0vAPZT2SkTR8RTJyJue/UEsDBBQAAAgIAACwn+sN5edfbAAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM01FFQSi9KLMgoBoqAOaWZKSB2tFKqiblZUpqhkZlBmmFSmoWxrkmakbGJRXJKkrF5UkpiiolSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAALCf635drgpfAgAABAUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAALCf6w3l519sAAAAeAAAAAkAJAAAAAAAAAAAAAAArAIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABjAwAAAAA=
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -883,6 +883,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1441482936}
   - component: {fileID: 1441482935}
+  - component: {fileID: 1441482937}
   m_Layer: 0
   m_Name: Portal
   m_TagString: Untagged
@@ -897,15 +898,15 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1441482934}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.17713821, y: 0}
+  m_Offset: {x: 0.17713809, y: -0.05820656}
   serializedVersion: 2
-  m_Radius: 0.6771382
+  m_Radius: 0.7353449
 --- !u!4 &1441482936
 Transform:
   m_ObjectHideFlags: 0
@@ -914,11 +915,60 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1441482934}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.603, y: 3.112, z: 0}
+  m_LocalPosition: {x: -3.43, y: 3.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1510437375}
   m_Father: {fileID: 0}
   m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1441482937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441482934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 896419360dcdc4b4aa1d43536a10f4af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 0
+  PortalActivationArea: {fileID: 1510437375}
+  PortalActivationRange: 0.67
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 512
+--- !u!1 &1510437374
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1510437375}
+  m_Layer: 0
+  m_Name: PortalArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1510437375
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1510437374}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1441482936}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1576691198
 GameObject:
@@ -966,7 +1016,7 @@ GameObject:
   - component: {fileID: 1732663861}
   - component: {fileID: 1732663863}
   - component: {fileID: 1732663862}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tilemap_Trees
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4536,7 +4586,7 @@ GameObject:
   - component: {fileID: 1955285771}
   - component: {fileID: 1955285773}
   - component: {fileID: 1955285772}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tilemap_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
