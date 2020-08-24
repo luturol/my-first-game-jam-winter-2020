@@ -4,17 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
-{    
-    public string GameScene;
-    public string AboutScene;
-
+{        
     public void StartGame()
     {
-        SceneManager.LoadScene(GameScene);
+        SceneManager.LoadScene(1);
     }
 
     public void ShowAbout()
     {
-        SceneManager.LoadScene(AboutScene);
+        SceneManager.LoadScene(2);
     }    
 }
