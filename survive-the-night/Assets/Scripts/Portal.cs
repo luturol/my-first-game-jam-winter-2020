@@ -1,7 +1,9 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System.Threading;
+using System.Runtime.CompilerServices;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Portal : MonoBehaviour
 {
@@ -9,6 +11,11 @@ public class Portal : MonoBehaviour
     public Transform PortalActivationArea;
     public float PortalActivationRange;
     public LayerMask enemyLayers;
+    public Text timeCount;
+    
+    private int minuts;
+    private float seconds;
+
     void Start()
     {
         if (life == 0)
@@ -17,9 +24,18 @@ public class Portal : MonoBehaviour
 
     void Update()
     {
+        seconds = seconds + Time.deltaTime;
+
+        if(seconds >= 60)
+        {
+            minuts++;
+            seconds = 0;
+        }
+            
+        timeCount.text = minuts.ToString("00") + ":"+ ((int) seconds).ToString("00");
+
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(PortalActivationArea.position, PortalActivationRange, enemyLayers);
 
-        //Damage them
         foreach(Collider2D enemyCollided in hitEnemies)
         {            
             var enemy = enemyCollided.GetComponent<Enemy>();
