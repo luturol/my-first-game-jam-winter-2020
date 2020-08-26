@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Portal : MonoBehaviour
 {
@@ -12,7 +13,8 @@ public class Portal : MonoBehaviour
     public float PortalActivationRange;
     public LayerMask enemyLayers;
     public Text timeCount;
-    
+    public Transform pfDamagePopup;
+
     private int minuts;
     private float seconds;
 
@@ -26,20 +28,30 @@ public class Portal : MonoBehaviour
     {
         seconds = seconds + Time.deltaTime;
 
-        if(seconds >= 60)
+        if (seconds >= 60)
         {
             minuts++;
             seconds = 0;
         }
-            
-        timeCount.text = minuts.ToString("00") + ":"+ ((int) seconds).ToString("00");
+
+        timeCount.text = minuts.ToString("00") + ":" + ((int)seconds).ToString("00");
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(PortalActivationArea.position, PortalActivationRange, enemyLayers);
 
-        foreach(Collider2D enemyCollided in hitEnemies)
-        {            
+        foreach (Collider2D enemyCollided in hitEnemies)
+        {
             var enemy = enemyCollided.GetComponent<Enemy>();
-            enemy.TakeDamage(enemy.maxHealth, new Vector2(transform.position.x, transform.position.y));            
+            enemy.TakeDamage(enemy.maxHealth, new Vector2(transform.position.x, transform.position.y));
+            life--;
+            Transform damagePopupTransform = Instantiate(pfDamagePopup, transform.position, Quaternion.identity);
+            DamagePopup damagePopup = damagePopupTransform.GetComponent<DamagePopup>();
+            damagePopup.Setup(-1);
+        }
+
+
+        if (life == 0)
+        {
+            SceneManager.LoadScene("menu");
         }
     }
 

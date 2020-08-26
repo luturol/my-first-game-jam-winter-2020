@@ -552,7 +552,6 @@ MonoBehaviour:
   Target: {fileID: 1441482934}
   HealthBar: {fileID: 3296798979876387976, guid: 28d9b8bdaaf3d294c8bef166180a06b0,
     type: 3}
-  waveCountText: {fileID: 0}
 --- !u!4 &302062586
 Transform:
   m_ObjectHideFlags: 0
@@ -964,6 +963,7 @@ GameObject:
   - component: {fileID: 844851121}
   - component: {fileID: 844851120}
   - component: {fileID: 844851119}
+  - component: {fileID: 844851126}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -1136,6 +1136,63 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &844851126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844851118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34fee54ced84db14891f8e4e0ad812e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &953806980
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 953806981}
+  - component: {fileID: 953806982}
+  m_Layer: 0
+  m_Name: GameAssets
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &953806981
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953806980}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.9192173, y: 1.3483582, z: -5066.757}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &953806982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953806980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f9698bcc3addf44d81a9ac7716fa1c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DamagePopup: {fileID: 1954709208374300138, guid: fa1fd6bb9f9fe3247aa845f493525c2a,
+    type: 3}
 --- !u!1 &1330003070
 GameObject:
   m_ObjectHideFlags: 0
