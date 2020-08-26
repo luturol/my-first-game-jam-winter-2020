@@ -45,7 +45,7 @@ public class Portal : MonoBehaviour
             life--;
             Transform damagePopupTransform = Instantiate(pfDamagePopup, transform.position, Quaternion.identity);
             DamagePopup damagePopup = damagePopupTransform.GetComponent<DamagePopup>();
-            damagePopup.Setup(-1);
+            damagePopup.Setup(life);
         }
 
 
