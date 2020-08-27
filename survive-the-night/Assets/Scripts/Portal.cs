@@ -17,7 +17,7 @@ public class Portal : MonoBehaviour
 
     private int minuts;
     private float seconds;
-
+    public static string formatedTime;
     void Start()
     {
         if (life == 0)
@@ -26,33 +26,38 @@ public class Portal : MonoBehaviour
 
     void Update()
     {
-        seconds = seconds + Time.deltaTime;
-
-        if (seconds >= 60)
+        
+        if (life > 0)
         {
-            minuts++;
-            seconds = 0;
-        }
+            seconds = seconds + Time.deltaTime;
 
+            if (seconds >= 60)
+            {
+                minuts++;
+                seconds = 0;
+            }                        
+
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(PortalActivationArea.position, PortalActivationRange, enemyLayers);
+
+            foreach (Collider2D enemyCollided in hitEnemies)
+            {
+                var enemy = enemyCollided.GetComponent<Enemy>();
+                enemy.TakeDamage(enemy.maxHealth, new Vector2(transform.position.x, transform.position.y));
+                life--;
+                Transform damagePopupTransform = Instantiate(pfDamagePopup, transform.position, Quaternion.identity);
+                DamagePopup damagePopup = damagePopupTransform.GetComponent<DamagePopup>();
+                damagePopup.Setup(life);
+            }
+        }
+        
         timeCount.text = minuts.ToString("00") + ":" + ((int)seconds).ToString("00");
-
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(PortalActivationArea.position, PortalActivationRange, enemyLayers);
-
-        foreach (Collider2D enemyCollided in hitEnemies)
-        {
-            var enemy = enemyCollided.GetComponent<Enemy>();
-            enemy.TakeDamage(enemy.maxHealth, new Vector2(transform.position.x, transform.position.y));
-            life--;
-            Transform damagePopupTransform = Instantiate(pfDamagePopup, transform.position, Quaternion.identity);
-            DamagePopup damagePopup = damagePopupTransform.GetComponent<DamagePopup>();
-            damagePopup.Setup(life);
-        }
-
 
         if (life == 0)
         {
-            SceneManager.LoadScene("menu");
-        }
+            formatedTime = minuts.ToString("00") + ":" + ((int)seconds).ToString("00");
+            SceneManager.LoadScene("end");
+        }        
+
     }
 
     void OnTriggerEnter2D(Collider2D other)
