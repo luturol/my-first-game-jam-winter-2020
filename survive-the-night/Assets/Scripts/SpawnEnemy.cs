@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System.Numerics;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Quaternion = UnityEngine.Quaternion;
 
 public class SpawnEnemy : MonoBehaviour
 {
@@ -23,16 +25,15 @@ public class SpawnEnemy : MonoBehaviour
         waited += Time.deltaTime;
         if (waited >= nextSpawn)
             InstantiateEnemy();
-
     }
 
     private void InstantiateEnemy()
     {
         waited = 0;
 
-        var health = Instantiate(HealthBar) as GameObject;
-        var enemy = Instantiate(Enemies) as GameObject;
-        enemy.transform.position = this.transform.position;
+        
+        var enemy = Instantiate(Enemies, transform.position, Quaternion.identity) as GameObject;
+        var health = Instantiate(HealthBar, enemy.transform.position, Quaternion.identity) as GameObject;        
 
         enemy.GetComponent<EnemyAI>().target = Target.transform;
 
