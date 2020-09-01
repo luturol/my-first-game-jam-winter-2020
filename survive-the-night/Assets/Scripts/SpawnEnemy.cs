@@ -30,18 +30,8 @@ public class SpawnEnemy : MonoBehaviour
     private void InstantiateEnemy()
     {
         waited = 0;
+        var enemy = Instantiate(Enemies, transform.position, Quaternion.identity) as GameObject;        
 
-        
-        var enemy = Instantiate(Enemies, transform.position, Quaternion.identity) as GameObject;
-        var health = Instantiate(HealthBar, enemy.transform.position, Quaternion.identity) as GameObject;        
-
-        enemy.GetComponent<EnemyAI>().target = Target.transform;
-
-        var sliderRef = health.GetComponentInChildren<Slider>();
-        sliderRef.GetComponent<FollowTransform>().SetFollowingObject(enemy.transform);
-
-        enemy.GetComponent<Enemy>().SetHealthBar(sliderRef);
-
-        health.transform.SetParent(enemy.transform);
+        enemy.GetComponent<EnemyAI>().target = Target.transform;                
     }
 }

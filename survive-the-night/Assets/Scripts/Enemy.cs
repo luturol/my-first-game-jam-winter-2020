@@ -14,21 +14,11 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;            
-    }
-    
-    public void SetHealthBar(Slider healthBar)
-    {
-        currentHealth = maxHealth;
-        sliderHealth = healthBar;                
-        sliderHealth.value = currentHealth;
-        sliderHealth.maxValue = maxHealth;
-    }
+    }    
 
     public void TakeDamage(int damage, Vector2 position)
     {
-        currentHealth -= damage;
-        sliderHealth.value = currentHealth;
-        
+        currentHealth -= damage;                
         //Play hurt animation
         var bloodClone = Instantiate(bloodEffect, gameObject.transform.position, gameObject.transform.rotation);
         Destroy(bloodClone, bloodClone.GetComponent<ParticleSystem>().main.duration);        
